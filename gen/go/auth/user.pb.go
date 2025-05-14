@@ -4,7 +4,7 @@
 // 	protoc        v5.29.3
 // source: auth/user.proto
 
-package user1
+package auth1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -598,7 +598,7 @@ var File_auth_user_proto protoreflect.FileDescriptor
 
 const file_auth_user_proto_rawDesc = "" +
 	"\n" +
-	"\x0fauth/user.proto\x12\x04user\x1a\x1fgoogle/protobuf/timestamp.proto\"Y\n" +
+	"\x0fauth/user.proto\x12\x04auth\x1a\x1fgoogle/protobuf/timestamp.proto\"Y\n" +
 	"\x11CreateUserRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
@@ -618,13 +618,13 @@ const file_auth_user_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
-	".user.UserR\x04user\"B\n" +
+	".auth.UserR\x04user\"B\n" +
 	"\x12GetListUserRequest\x12\x16\n" +
 	"\x06offset\x18\x01 \x01(\x05R\x06offset\x12\x14\n" +
 	"\x05limit\x18\x02 \x01(\x05R\x05limit\"7\n" +
 	"\x13GetListUserResponse\x12 \n" +
 	"\x05users\x18\x01 \x03(\v2\n" +
-	".user.UserR\x05users\"i\n" +
+	".auth.UserR\x05users\"i\n" +
 	"\x11UpdateUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
@@ -632,20 +632,20 @@ const file_auth_user_proto_rawDesc = "" +
 	"\bpassword\x18\x04 \x01(\tR\bpassword\"4\n" +
 	"\x12UpdateUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
-	".user.UserR\x04user\"#\n" +
+	".auth.UserR\x04user\"#\n" +
 	"\x11DeleteUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\".\n" +
 	"\x12DeleteUserResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2\xcd\x02\n" +
 	"\vUserService\x12?\n" +
 	"\n" +
-	"CreateUser\x12\x17.user.CreateUserRequest\x1a\x18.user.CreateUserResponse\x126\n" +
-	"\aGetUser\x12\x14.user.GetUserRequest\x1a\x15.user.GetUserResponse\x12C\n" +
-	"\fGetListUsers\x12\x18.user.GetListUserRequest\x1a\x19.user.GetListUserResponse\x12?\n" +
+	"CreateUser\x12\x17.auth.CreateUserRequest\x1a\x18.auth.CreateUserResponse\x126\n" +
+	"\aGetUser\x12\x14.auth.GetUserRequest\x1a\x15.auth.GetUserResponse\x12C\n" +
+	"\fGetListUsers\x12\x18.auth.GetListUserRequest\x1a\x19.auth.GetListUserResponse\x12?\n" +
 	"\n" +
-	"UpdateUser\x12\x17.user.UpdateUserRequest\x1a\x18.user.UpdateUserResponse\x12?\n" +
+	"UpdateUser\x12\x17.auth.UpdateUserRequest\x1a\x18.auth.UpdateUserResponse\x12?\n" +
 	"\n" +
-	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponseB\x17Z\x15auth/user.proto;user1b\x06proto3"
+	"DeleteUser\x12\x17.auth.DeleteUserRequest\x1a\x18.auth.DeleteUserResponseB\x17Z\x15auth/user.proto;auth1b\x06proto3"
 
 var (
 	file_auth_user_proto_rawDescOnce sync.Once
@@ -661,35 +661,35 @@ func file_auth_user_proto_rawDescGZIP() []byte {
 
 var file_auth_user_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_auth_user_proto_goTypes = []any{
-	(*CreateUserRequest)(nil),     // 0: user.CreateUserRequest
-	(*CreateUserResponse)(nil),    // 1: user.CreateUserResponse
-	(*User)(nil),                  // 2: user.User
-	(*GetUserRequest)(nil),        // 3: user.GetUserRequest
-	(*GetUserResponse)(nil),       // 4: user.GetUserResponse
-	(*GetListUserRequest)(nil),    // 5: user.GetListUserRequest
-	(*GetListUserResponse)(nil),   // 6: user.GetListUserResponse
-	(*UpdateUserRequest)(nil),     // 7: user.UpdateUserRequest
-	(*UpdateUserResponse)(nil),    // 8: user.UpdateUserResponse
-	(*DeleteUserRequest)(nil),     // 9: user.DeleteUserRequest
-	(*DeleteUserResponse)(nil),    // 10: user.DeleteUserResponse
+	(*CreateUserRequest)(nil),     // 0: auth.CreateUserRequest
+	(*CreateUserResponse)(nil),    // 1: auth.CreateUserResponse
+	(*User)(nil),                  // 2: auth.User
+	(*GetUserRequest)(nil),        // 3: auth.GetUserRequest
+	(*GetUserResponse)(nil),       // 4: auth.GetUserResponse
+	(*GetListUserRequest)(nil),    // 5: auth.GetListUserRequest
+	(*GetListUserResponse)(nil),   // 6: auth.GetListUserResponse
+	(*UpdateUserRequest)(nil),     // 7: auth.UpdateUserRequest
+	(*UpdateUserResponse)(nil),    // 8: auth.UpdateUserResponse
+	(*DeleteUserRequest)(nil),     // 9: auth.DeleteUserRequest
+	(*DeleteUserResponse)(nil),    // 10: auth.DeleteUserResponse
 	(*timestamppb.Timestamp)(nil), // 11: google.protobuf.Timestamp
 }
 var file_auth_user_proto_depIdxs = []int32{
-	11, // 0: user.User.created_at:type_name -> google.protobuf.Timestamp
-	11, // 1: user.User.updated_at:type_name -> google.protobuf.Timestamp
-	2,  // 2: user.GetUserResponse.user:type_name -> user.User
-	2,  // 3: user.GetListUserResponse.users:type_name -> user.User
-	2,  // 4: user.UpdateUserResponse.user:type_name -> user.User
-	0,  // 5: user.UserService.CreateUser:input_type -> user.CreateUserRequest
-	3,  // 6: user.UserService.GetUser:input_type -> user.GetUserRequest
-	5,  // 7: user.UserService.GetListUsers:input_type -> user.GetListUserRequest
-	7,  // 8: user.UserService.UpdateUser:input_type -> user.UpdateUserRequest
-	9,  // 9: user.UserService.DeleteUser:input_type -> user.DeleteUserRequest
-	1,  // 10: user.UserService.CreateUser:output_type -> user.CreateUserResponse
-	4,  // 11: user.UserService.GetUser:output_type -> user.GetUserResponse
-	6,  // 12: user.UserService.GetListUsers:output_type -> user.GetListUserResponse
-	8,  // 13: user.UserService.UpdateUser:output_type -> user.UpdateUserResponse
-	10, // 14: user.UserService.DeleteUser:output_type -> user.DeleteUserResponse
+	11, // 0: auth.User.created_at:type_name -> google.protobuf.Timestamp
+	11, // 1: auth.User.updated_at:type_name -> google.protobuf.Timestamp
+	2,  // 2: auth.GetUserResponse.user:type_name -> auth.User
+	2,  // 3: auth.GetListUserResponse.users:type_name -> auth.User
+	2,  // 4: auth.UpdateUserResponse.user:type_name -> auth.User
+	0,  // 5: auth.UserService.CreateUser:input_type -> auth.CreateUserRequest
+	3,  // 6: auth.UserService.GetUser:input_type -> auth.GetUserRequest
+	5,  // 7: auth.UserService.GetListUsers:input_type -> auth.GetListUserRequest
+	7,  // 8: auth.UserService.UpdateUser:input_type -> auth.UpdateUserRequest
+	9,  // 9: auth.UserService.DeleteUser:input_type -> auth.DeleteUserRequest
+	1,  // 10: auth.UserService.CreateUser:output_type -> auth.CreateUserResponse
+	4,  // 11: auth.UserService.GetUser:output_type -> auth.GetUserResponse
+	6,  // 12: auth.UserService.GetListUsers:output_type -> auth.GetListUserResponse
+	8,  // 13: auth.UserService.UpdateUser:output_type -> auth.UpdateUserResponse
+	10, // 14: auth.UserService.DeleteUser:output_type -> auth.DeleteUserResponse
 	10, // [10:15] is the sub-list for method output_type
 	5,  // [5:10] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name

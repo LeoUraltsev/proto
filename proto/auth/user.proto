@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package user;
+package auth;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "auth/user.proto;user1";
+option go_package = "auth/user.proto;auth1";
 
 service UserService {
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
