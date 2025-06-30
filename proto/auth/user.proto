@@ -7,6 +7,7 @@ import "google/protobuf/timestamp.proto";
 option go_package = "auth/user.proto;auth1";
 
 service UserService {
+    rpc Login (LoginRequest) returns (LoginResponse);
     rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
     rpc GetUser (GetUserRequest) returns (GetUserResponse);
     rpc GetListUsers (GetListUserRequest) returns (GetListUserResponse);
@@ -67,4 +68,13 @@ message DeleteUserRequest {
 
 message DeleteUserResponse {
     bool success = 1;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string token = 1;
 }
