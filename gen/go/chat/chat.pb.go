@@ -319,11 +319,11 @@ const file_chat_chat_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"/\n" +
 	"\x13SendMessageResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess2\xd4\x01\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess2\xd6\x01\n" +
 	"\vChatService\x12?\n" +
 	"\n" +
-	"CreateChat\x12\x17.chat.CreateChatRequest\x1a\x18.chat.CreateChatResponse\x12@\n" +
-	"\vConnectChat\x12\x17.chat.CreateChatRequest\x1a\x18.chat.CreateChatResponse\x12B\n" +
+	"CreateChat\x12\x17.chat.CreateChatRequest\x1a\x18.chat.CreateChatResponse\x12B\n" +
+	"\vConnectChat\x12\x18.chat.ConnectChatRequest\x1a\x19.chat.ConnectChatResponse\x12B\n" +
 	"\vSendMessage\x12\x18.chat.SendMessageRequest\x1a\x19.chat.SendMessageResponseB\x17Z\x15chat/chat.proto;chat1b\x06proto3"
 
 var (
@@ -349,10 +349,10 @@ var file_chat_chat_proto_goTypes = []any{
 }
 var file_chat_chat_proto_depIdxs = []int32{
 	0, // 0: chat.ChatService.CreateChat:input_type -> chat.CreateChatRequest
-	0, // 1: chat.ChatService.ConnectChat:input_type -> chat.CreateChatRequest
+	2, // 1: chat.ChatService.ConnectChat:input_type -> chat.ConnectChatRequest
 	4, // 2: chat.ChatService.SendMessage:input_type -> chat.SendMessageRequest
 	1, // 3: chat.ChatService.CreateChat:output_type -> chat.CreateChatResponse
-	1, // 4: chat.ChatService.ConnectChat:output_type -> chat.CreateChatResponse
+	3, // 4: chat.ChatService.ConnectChat:output_type -> chat.ConnectChatResponse
 	5, // 5: chat.ChatService.SendMessage:output_type -> chat.SendMessageResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type

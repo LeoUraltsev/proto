@@ -29,7 +29,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChatServiceClient interface {
 	CreateChat(ctx context.Context, in *CreateChatRequest, opts ...grpc.CallOption) (*CreateChatResponse, error)
-	ConnectChat(ctx context.Context, in *CreateChatRequest, opts ...grpc.CallOption) (*CreateChatResponse, error)
+	ConnectChat(ctx context.Context, in *ConnectChatRequest, opts ...grpc.CallOption) (*ConnectChatResponse, error)
 	SendMessage(ctx context.Context, in *SendMessageRequest, opts ...grpc.CallOption) (*SendMessageResponse, error)
 }
 
@@ -51,9 +51,9 @@ func (c *chatServiceClient) CreateChat(ctx context.Context, in *CreateChatReques
 	return out, nil
 }
 
-func (c *chatServiceClient) ConnectChat(ctx context.Context, in *CreateChatRequest, opts ...grpc.CallOption) (*CreateChatResponse, error) {
+func (c *chatServiceClient) ConnectChat(ctx context.Context, in *ConnectChatRequest, opts ...grpc.CallOption) (*ConnectChatResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CreateChatResponse)
+	out := new(ConnectChatResponse)
 	err := c.cc.Invoke(ctx, ChatService_ConnectChat_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -76,7 +76,7 @@ func (c *chatServiceClient) SendMessage(ctx context.Context, in *SendMessageRequ
 // for forward compatibility.
 type ChatServiceServer interface {
 	CreateChat(context.Context, *CreateChatRequest) (*CreateChatResponse, error)
-	ConnectChat(context.Context, *CreateChatRequest) (*CreateChatResponse, error)
+	ConnectChat(context.Context, *ConnectChatRequest) (*ConnectChatResponse, error)
 	SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error)
 	mustEmbedUnimplementedChatServiceServer()
 }
@@ -91,7 +91,7 @@ type UnimplementedChatServiceServer struct{}
 func (UnimplementedChatServiceServer) CreateChat(context.Context, *CreateChatRequest) (*CreateChatResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateChat not implemented")
 }
-func (UnimplementedChatServiceServer) ConnectChat(context.Context, *CreateChatRequest) (*CreateChatResponse, error) {
+func (UnimplementedChatServiceServer) ConnectChat(context.Context, *ConnectChatRequest) (*ConnectChatResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConnectChat not implemented")
 }
 func (UnimplementedChatServiceServer) SendMessage(context.Context, *SendMessageRequest) (*SendMessageResponse, error) {
@@ -137,7 +137,7 @@ func _ChatService_CreateChat_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _ChatService_ConnectChat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateChatRequest)
+	in := new(ConnectChatRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -149,7 +149,7 @@ func _ChatService_ConnectChat_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: ChatService_ConnectChat_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChatServiceServer).ConnectChat(ctx, req.(*CreateChatRequest))
+		return srv.(ChatServiceServer).ConnectChat(ctx, req.(*ConnectChatRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

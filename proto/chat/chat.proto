@@ -6,7 +6,7 @@ option go_package = "chat/chat.proto;chat1";
 
 service ChatService {
   rpc CreateChat(CreateChatRequest) returns (CreateChatResponse);
-  rpc ConnectChat(CreateChatRequest) returns (CreateChatResponse);
+  rpc ConnectChat(ConnectChatRequest) returns (ConnectChatResponse);
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
 }
 
