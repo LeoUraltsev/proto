@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "chat/chat.proto;chat1";
+
+service ChatService {
+  rpc CreateChat(CreateChatRequest) returns (CreateChatResponse);
+  rpc ConnectChat(CreateChatRequest) returns (CreateChatResponse);
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+}
+
+message CreateChatRequest {
+  string name = 1;
+}
+
+message CreateChatResponse {
+  string id = 1;
+}
+
+message ConnectChatRequest {
+  string user_id = 1;
+  string username = 2;
+}
+
+message ConnectChatResponse {
+  bool success = 1;
+}
+
+message SendMessageRequest {
+  string user_id = 1;
+  string message = 2;
+}
+
+message SendMessageResponse {
+  bool success = 1;
+}
