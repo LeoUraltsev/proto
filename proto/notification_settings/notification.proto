@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package notification;
+
+option go_package = "notification/notification.proto;notification_settings";
+
+service NotificationSettings {
+  rpc EnableTelegramNotification (EnableTelegramNotificationRequest) returns (EnableTelegramNotificationResponse);
+}
+
+message EnableTelegramNotificationRequest {
+  
+}
+
+message EnableTelegramNotificationResponse {
+  string deeplink = 1;
+}
